@@ -1,11 +1,17 @@
 
-import React from "react";
+import React, { useState } from "react";
 import './../styles/App.css';
 
 const App = () => {
+  const [username, setUsername] = useState("");
+
   return (
-    <div>
-        {/* Do not remove the main div */}
+    <div id="main">
+      <h2>Enter your name:</h2>
+      <input type="text" onChange={(e)=>{setUsername(e.target.value)}}/>
+      <div>
+      {username.length>0 ? `Hello ${username}!` : ""}
+      </div>
     </div>
   )
 }
